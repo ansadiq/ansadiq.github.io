@@ -1,4 +1,5 @@
-- Fun Fact: I have two dogs named Snow (~12) and Bruno (~8)!
+Psychology doctoral candidate with special interest in data science for social policy
+Fun Fact: I have two dogs named Snow (~12) and Bruno (~8)!
 
 ## Education
 - Ph.D. Psychological Sciences and Human Development, Cornell University
