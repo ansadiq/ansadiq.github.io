@@ -1,6 +1,3 @@
----
-layout: default
----
 
 Psychology doctoral candidate interested in data science for social policy
 
@@ -65,7 +62,7 @@ William Hobbs, Misha Inniss-Thompson, Jane Mendle
 
 Data Preprocessing in R, Dimension Reduction Series in R, Factor Analysis in R, Machine Learning: Supervised Learning in R, Machine Learning Series: Natural Language Processing, Factor Analysis in R, Machine Learning: Supervised Learning in R, Intro to Publication Ready Tables in R
 
-#### Teaching Assistantship
+#### Teaching Assistantship 
 
 | Course Code | Course Title | University |
 |:------------|:-------------|:-----------|
