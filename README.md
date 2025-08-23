@@ -35,7 +35,6 @@ William Hobbs, Misha Inniss-Thompson, Jane Mendle
 
 ## Publications
 - Ehrlich, K. B., Yu, T., Sadiq, A., & Brody, G. H. (2021). Neighborhood poverty, allostatic load, and changes in cellular aging in African American young adults: the moderating role of attachment. Attachment & human development, 1–14. [Link](https://pmc.ncbi.nlm.nih.gov/articles/PMC9361218/)
-- /[ Working Paper]
  
 ## Presentations 
 - Sadiq, A., Hicks S., Lauder K., McCabe, R., Ardon, F. (2025). How Do Race and Neurotype Affect Students' Sense of Belonging and Discrimination? Poster presentation given at "Advancing Health Equity Together" the Cornell Center for Health Equity 2025 Symposium, New York City, NY.   
