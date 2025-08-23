@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 Psychology doctoral candidate interested in data science for social policy
 
 Fun Fact: I have two dogs named Snow (~12) and Bruno (~8)!
