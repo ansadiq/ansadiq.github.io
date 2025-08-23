@@ -1,4 +1,5 @@
 Psychology doctoral candidate with special interest in data science for social policy
+
 Fun Fact: I have two dogs named Snow (~12) and Bruno (~8)!
 
 ## Education
@@ -9,7 +10,7 @@ Fun Fact: I have two dogs named Snow (~12) and Bruno (~8)!
     - Undergraduate Thesis: Effects of Solitary Housing on Mouse Pituitary Glucocorticoid Receptor Expression
 
 ### Skills
-| Area | Skills/Tools |
+| Area     | Skills/Tools |
 |:---------|:-------------|
 | **Quantitative Analysis** | Text and Numeric Data Preprocessing, Statistical Analysis, Model Building and Evaluation, Data Visualization, Classification Algorithms, Clustering Algorithms, Geospatial Visualization (using R, GeoDa, QGIS 2, and ArcGIS), Topic Modeling, Sentiment Analysis |
 | **Programming Languages** | R (Advanced), Python (Novice)|
@@ -18,8 +19,15 @@ Fun Fact: I have two dogs named Snow (~12) and Bruno (~8)!
 | **'Dry' Lab Data Collection** | Qualtrics, Google Forms, Survey Monkey, Functional Magnetic Resonance Imaging |
 | **Wet Lab Data Collection** | Bradford Assay, Western Blot, Polymerase chain reaction, Recombinase Polymerase Amplification, Ponceau stains, SDS-PAGE, mRNA Extraction and Isolation from brain tissue, DNA Extraction and Isolation from bacteria, Gel Electrophoresis |
 
+| head1        | head two          | three |
+|:-------------|:------------------|:------|
+| ok           | good swedish fish | nice  |
+| out of stock | good and plenty   | nice  |
+| ok           | good `oreos`      | hmm   |
+| ok           | good `zoute` drop | yumm  |
+
 ### Research Interests
-mixed-methods, computational social science methods, social determinants of health, social support, early-life adversity, intergenerational effects, allostasis & homeostasis via prefrontal cortex-hypothalamic-pituitary-adrenal functioning, 
+mixed-methods, computational social science methods, social determinants of health, social support, early-life adversity, intergenerational effects, allostasis & homeostasis via prefrontal cortex-hypothalamic-pituitary-adrenal functioning, structural interventions
 
 # Research statement
 My research examines how macro-level environmental factors—from neighborhood characteristics to social movements to policy environments—influence micro-level developmental processes including stress physiology, cognitive function, and psychological well-being. I apply an interdisciplinary approach to studying social environment and well-being, using mixed methods to examine how factors like resource scarcity and environmental barriers measurably shape health outcomes and divergent life trajectories. This includes spatial analysis of environmental exposures, computational text analysis of expert narratives, longitudinal modeling of biomarker data, and mixed-methods approaches. This methodological diversity allows me to examine social context effects across multiple levels of analysis—from "neurons to neighborhoods". My work is theoretically grounded in ecological systems theory, scarcity theory, skin-deep resilience, social identity theory, John Henryism, and social baseline theory, allostatic load theory, and community-based participatory research approaches to examine questions that matter for scientific understanding, social policy, and marginalized communities. 
@@ -51,7 +59,7 @@ Data Preprocessing in R, Dimension Reduction Series in R, Factor Analysis in R, 
 
 #### Teaching Assistantship
 | Course Code | Course Title | University |
-|:------------|:-------------|-----:|
+|:------------|:-------------|:-----------|
 | N/A | Summer Seminar: Black Intellectual Traditions  | Telluride Association, Cornell  |
 | HD3620 | Human Bonding | Cornell |
 | PSYCH1101 | Introduction to Psychology | Cornell |
