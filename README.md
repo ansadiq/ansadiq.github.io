@@ -1,5 +1,18 @@
 Fun Fact: I have two dogs named Snow (~12) and Bruno (~8)!
 
+navbar:
+  title: "My Website"
+  type: inverse
+  left:
+    - text: "Home"
+      icon: fa-home
+      href: index.html
+    - text: "About"
+      icon: fa-info
+      href: about.html
+    - text: "More"
+      icon: fa-gear
+
 ## Education
 
 - Ph.D. Psychological Sciences and Human Development, Cornell University
