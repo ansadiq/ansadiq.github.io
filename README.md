@@ -1,5 +1,3 @@
-Fun Fact: I have two dogs named Snow (~12) and Bruno (~8)!
-
 ## Education
 
 - Ph.D. Psychological Sciences and Human Development, Cornell University
@@ -15,7 +13,7 @@ Fun Fact: I have two dogs named Snow (~12) and Bruno (~8)!
 | **Quantitative Analysis** | Text and Numeric Data Preprocessing, Statistical Analysis, Model Building and Evaluation, Data Visualization, Classification Algorithms, Clustering Algorithms, Geospatial Visualization (using R, GeoDa, QGIS 2, and ArcGIS), Topic Modeling, Sentiment Analysis |
 | **Programming Languages** | R (Advanced), Python (Novice)|
 | **Qualitative Analysis** | Semi-structured Interviews, Delphi Methodology, Open-ended question development and analysis, Scoping and systematic literature reviews |
-| **Qualitative Software** | Atlas.ti, Covidence, Linguistic Inquiry and Word Count (LIWC-22) |
+| **Qualitative Software** | R, Atlas.ti, Covidence, Linguistic Inquiry and Word Count (LIWC-22) |
 | **'Dry' Lab Data Collection** | Qualtrics, Google Forms, Survey Monkey, Functional Magnetic Resonance Imaging |
 | **Wet Lab Data Collection** | Bradford Assay, Western Blot, Polymerase chain reaction, Recombinase Polymerase Amplification, Ponceau stains, SDS-PAGE, mRNA Extraction and Isolation from brain tissue, DNA Extraction and Isolation from bacteria, Gel Electrophoresis |
 
@@ -63,13 +61,13 @@ Data Preprocessing in R, Dimension Reduction Series in R, Factor Analysis in R, 
 
 | Course Code | Course Title | University |
 |:------------|:-------------|:-----------|
-| N/A | Summer Seminar: Black Intellectual Traditions  | Telluride Association, Cornell  |
-| HD3620 | Human Bonding | Cornell |
-| PSYCH1101 | Introduction to Psychology | Cornell |
-| HD1150 | Introduction to Human Development: Infancy and Childhood | Cornell |
-| HD3210 | Developmental Cognitive Neuroscience | Cornell |
-| BIO341 | Cellular Physiology | Earlham |
-| BIO112 | Cells, Genes, and Inheritance | Earlham |
+| N/A | Summer Seminar: Black Intellectual Traditions  | Telluride Association, Cornell University |
+| HD3620 | Human Bonding | Cornell University | 
+| PSYCH1101 | Introduction to Psychology | Cornell University |
+| HD1150 | Introduction to Human Development: Infancy and Childhood | Cornell University |
+| HD3210 | Developmental Cognitive Neuroscience | Cornell University |
+| BIO341 | Cellular Physiology | Earlham College |
+| BIO112 | Cells, Genes, and Inheritance | Earlham College |
 
 
 ### Service, Leadership
