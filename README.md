@@ -35,8 +35,10 @@ William Hobbs, Misha Inniss-Thompson, Jane Mendle
 - An Analysis of Open-Ended Text, Surveys, and Cognitive Tasks to Study Scarcity, Focus, and Executive Function Using the Mid Life in the United States study (MIDUS Scarcity)
 - Neurodivergent Black Indigenous and People of Color Student Experiences Study (ND BIPOC)
     - My collaborative work with community organizations explores how grassroots social movements serve as buffers against the health impacts of structural racism. This research employs a mixed-methods approach, integrating ethnographic observation and survey data.
-- A Spatial, Political, and Health Analysis of Protest Exposure (Dissertation Working Title) 
+- A Spatial, Political, and Public Health Analysis of Exposure to 2020 BLM Protests (Dissertation Working Title)
+  - This study examines the geographic distribution and population exposure of Black Lives Matter (BLM) protests in 2020 across 15 major U.S. metropolitan statistical areas (MSAs). 
 - Achieving a Racially Just Food System: Implications for Obesity Prevention and Improved Child Health, Delphi Study (PI: Angela Odoms-Young)
+    - This project uses a Delphi questionnaire method to systematically gather expert consensus on how, where, and why racism manifests in the US food system through closed-ended questions that can be quantified for percent agreement. 
 
 ### Publications
 
