@@ -1,0 +1,181 @@
+---
+title: "Spatial Demography w/ R"
+author: "Aishat Sadiq"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Spatial Demography with R
+
+### Introduction
+At the time of writing this document, I'm almost all of the way through the Spatial Demography course taught by Peter Rich. It's a great course that could be taught online...hint hint..Peter!!!
+
+Anyways, I realize now the beauty and ease of using point and click methods for statistical analyses. this was made because I was bored and I would ahve liked to have this sort of guide earlier on in the education process. So...here we go. I hope it helps at least one person, even if it just me in the future. 
+
+Best, 
+Aishat N Sadiq
+
+### Important Packages and Info
+
+```{r echo=TRUE}
+# install.packages("PACKAGE_NAME")
+# install.packages(sfheaders)           # 
+
+# library(haven)                        # read in .dta stata files
+# library(leaflet)                      # for interactive maps
+# library(lutz)                         # lat,long or 'sf/sfc' POINT object -> corresponding time zone    
+# library(mapview)                      # interactive web mapping
+# library(seg)                          # Measuring Spatial Segregation 
+                                           # w/ White's P index(1983), Morrill's D(adj)(1991), Wong's D(w) and D(s) (1993), & 
+                                           # Reardon and O'Sullivan(2004) 
+# library(segregation)                  # seg and dissim indices
+# library(sf)                           # read in .shp esri files
+# library(sp)                           # handling spatial points, lines, polygons, & grids
+# library(spData)                       # 
+# library(spdep)                        # neighbors & spatial weights 
+# library(splancs)                      # 
+# library(stars)                        # 
+# library(terra)                        # 
+# library(tidycensus)                   # get_acs(); get_estimates(); get_pums()
+# library(tidyverse)                    # pipe %>% function
+# library(tmap)                         # static & interactive thematic maps
+# library(USAboundaries)                # data for USA boundaries
+# library(viridis)                      # color palettes (disability friendly)
+# library(viridisLite)                  #
+# library(patchwork)                    # segregation::segplot()
+# library(raster)                       #
+# library(rgeoda)                       # R wrapper of libgeoda C++ library based on the GeoDa software
+  
+# library(glmmfields) # designed to fit spatiotemporal GLMs with the possibility of extreme events, it can also be used to fit regular spatial GLMs without a time element and without extreme events. Currently it can fit Gaussian (link = identity), Gamma (link = log), Poisson (link = log), negative binomial (link = log), and binomial (link = logit) models. The package can also fit lognormal (link = log) models.
+##### https://cran.r-project.org/web/packages/glmmfields/vignettes/spatial-glms.html
+
+# spgwr ,GWmodel, or gwrr   -  Geographically Weighted Regression in R   
+# ##### https://rstudio-pubs-static.s3.amazonaws.com/44975_0342ec49f925426fa16ebcdc28210118.html
+
+
+
+# 
+```
+
+###  Measuring and analyzing segregation
+
+```{r}
+
+library(segregation)                  # seg and dissim indices
+library(patchwork)                    # segregation::segplot()
+
+list.files()
+list.dirs()
+```
+
+###  Mapping population data
+
+```{r}
+## Merge shape and datafiles into new shape file
+hw6_final <- merge(dta_south68, hw6_shape, by= "gisjoin") %>% 
+  sf::st_sf(crs="NAD83") %>% 
+ sf:: st_as_sf(coords = c("xlon", "ylat"), 
+    crs="NAD83", agr = "constant") 
+# %>% st_write("hw6_final", driver = "ESRI Shapefile")
+#View(hw6_final)
+```
+
+
+###  Calculating geometry and spatially joining data
+
+###  Introduction to spatial statistics
+background layers for maps
+
+###  Spatial clustering, Moran’s I, and LISA maps
+Spatial Weights 
+- Contiguity (Queen, Rook, Precision) vs Distance-Based (Threshold distance, knn)
+Euclidean, 
+- Histogram
+
+Univariate Moran I, Differential Moran's I, Moran's I w/ EB Rate
+- Morans Scatterplot
+-- Randomization w/ # permutations
+- Spatial Correlogram
+
+
+Local Spatial Autocorrelation
+Univariate Local Moran's I, Differential Local Moran's I, Local Moran's I with EB Rate, Local G Cluster Map, Local G* Cluster Map
+
+Nonparametic Spatial Autocorrelation
+
+
+###  Spatial Regression ----
+
+#### Lag models
+#### Error models
+
+#### GLMs (ANOVAs) vs OLS, Weighted least-squares, ML Estimation, Robust regression?
+The generalized linear model is a framework for fitting and testing versions of the linear regression model that are more flexible than traditional or “ordinary” least squares (OLS). Unlike non-parametric models, GLM models do not “relax” assumptions–they make alternative assumptions, often permitting us to fit different noise distributions, and different non-linear relationships that we might have otherwise used a transformation to achieve.
+
+OLS is less suitable for: binary, categorical, count, or skewed outcome variables
+
+Support References: 
+- https://pages.mtu.edu/~shanem/psy5220/daily/Day08/GLM.html#:~:text=2023%2D01%2D31-,Generalized%20Linear%20Model%20(GLM),%E2%80%9D%20least%20squares%20(OLS).
+- https://rpubs.com/corey_sparks/250410
+- https://hughst.github.io/week-6/
+
+
+#### Space-Time Exploration
+
+GeoDa 
+- Time Editor (grouped-time vars)
+- Time Player (Boxmap w/ corresponding boxplots by time)
+- Differential Spatial Autocorrelation (spatial autocorrelation on change over time) & cluster map
+- Averages Tool (comparing means/Difference in Difference Tests/anova?)
+OLS regression with diagnostics for spatial effects
+ML regression of spatial lag and spatial error models
+Pooled space-time regression/weights
+
+###  Spatial heterogeneity and other innovations in Spatial Demography
+
+#### QGIS R wrapper
+
+#### GeoDa R wrapper
+ToDo: refine down methods to most used and interpretable
+
+rgeoda - https://geodacenter.github.io/rgeoda/articles/rgeoda_tutorial.html
+
+- Spatial Weights: Rook, Queen, Distance-based, Nearest Neighbors, Kernel
+
+- Spatial Autocorrelation: Local Moran, Bivariate Local Moran, Local Moran EB Rates, Local Geary, Local Getis-Ord, Multivariate Local Geary, Local Join Count, Bivariate Local Join Count, (Multivariate) Colocation Local Join Count, Quantile LISA, Multivariate Quantile LISA, Neighbor Match Test
+
+- Spatial Clustering: SCHC Spatial Constrained Hierarchical Clustering (Single-linkage, Complete-linkage, Average-linkage, Ward-linkage), SKATER, REDCAP, AZP, Max-p, Join Count Ratio, Spatial Validation, Make Spatial
+
+### References, Future Resources, and other Citations
+- Hands-On Programming with R: Write Your Own Functions and Simulations by Garrett Grolemund (2014)
+Available for free at: https://rstudio-education.github.io/hopr/
+
+- R for Everyone: Advanced Analytics and Graphics, Second Edition by Jared Lander (2017)
+
+- Practical Data Science with R, Second Edition by Nina Zumel and John Mount (2019)
+
+- R for Data Science: Import, Tidy, Transform, Visualize, and Model Data by Hadley Wickham and Garrett Grolemund (2016)
+Available for free at: https://r4ds.had.co.nz/
+
+- Mastering Shiny: Build Interactive Apps, Reports, and Dashboards Powered by R, First Edition by Hadley Wickham (2021)
+Available for free at: https://mastering-shiny.org/
+
+- Advanced R, Second Edition by Hadley Wickham (2019)
+Available for free at: https://adv-r.hadley.nz/
+
+- R Packages: Organize, Test, Document, and Share Your Code by Hadley Wickham (2015)
+Available for free at: https://r-pkgs.org/
+
+- ggplot2: Elegant Graphics for Data Analysis (Use R), Second Edition by Hadley Wickham (2016)
+Available for free at: https://ggplot2-book.org/
+Note, a third edition was submitted to a publisher, but has yet to appear on Amazon.
+
+- Deep Learning with R, First Edition by François Chollet and J.J. Allaire (2018)
+These texts describe how to use Keras to train deep learning networks in Python and R. The latter is slightly out of date.
+
+
+

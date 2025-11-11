@@ -1,0 +1,213 @@
+---
+title: "IntroNLP"
+author: "Aishat Sadiq"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction to Natural Language Processing
+
+```{r Data Prep}
+#devtools::install_github("ccss-rs/NAMEOFREPO")
+set.seed(31415)
+
+## install.packages("tidyverse")
+library(tidyverse)
+# library(help = "tidyverse")
+# ?tidyverse
+
+library(tidytext)
+library(topicmodels)
+# library(superheat)
+library(ggrepel)
+library(spacyr) # lem stem
+library(tm) # TermDocumentMatrix
+library(SnowballC) # Porter stemming 
+# library(lda)
+library(stm) # Structural Topic Modeling
+library(wordcloud)
+
+```
+
+## Import Dataset
+
+```{r Import Dataset, echo=FALSE}
+
+# find downloaded github folder
+getwd()
+#setwd(dir)
+
+#Trump Tweets Dataset
+# trump_tweets <- read_csv("ML-NLP/trump_tweets.csv")
+# View(trump_tweets)
+
+# Panama Papers Dataset
+# nodes_entities <- read.csv("/Users/aishatsadiq/Library/Mobile Documents/iCloud~md~obsidian/Documents/PhD/CCSS Data Fellow/ML-NLP/full-oldb.LATEST/nodes-entities.csv")
+# View(nodes_entities)
+
+library(readr)
+# Mass Mobilization Dataset
+mmALL_073120_csv <- readr::read_csv("mmALL_073120_csv.csv") %>%
+  filter(year=="2020")
+View(mmALL_073120_csv)
+
+```
+
+## Data Preprocessing
+
+```{r Data Preprocessing}
+library(tidytext)
+?tidytext::unnest_tokens  # Help R Doc for needed function
+colnames(mmALL_073120_csv) # copy proper column name
+
+# remove trailing and leading spaces 
+mmALL_073120_csv$notes <- stringr::str_trim(mmALL_073120_csv$notes, side = "both")
+head(mmALL_073120_csv$notes)
+
+# Uppercasing w/ Base R toupper(), could also uuse tolower() for lowercase transformation
+mmALL_073120_csv[c("notes")] <- sapply(mmALL_073120_csv[c("notes")], function(x) toupper(x))
+head(mmALL_073120_csv$notes)
+
+mmALL_073120_csv[c("notes")] <- sapply(mmALL_073120_csv[c("notes")], function(x) tolower(x))
+head(mmALL_073120_csv$notes)
+
+# Split raw notes to individual words/tokens, Remove stop words, remove stem w/ porter method, Count Words 
+
+stem_counts <- mmALL_073120_csv %>%
+  unnest_tokens(word, notes) %>%
+  anti_join(tidytext::stop_words) %>%
+   mutate(stem = wordStem(word)) %>%
+  count(id, stem) %>%
+    arrange(desc(n))
+View(stem_counts)
+
+stem_counts_noid <- mmALL_073120_csv %>%
+  unnest_tokens(word, notes) %>%
+  anti_join(stop_words) %>%
+   mutate(stem = wordStem(word)) %>%
+  count(stem) %>%
+    arrange(desc(n))
+View(stem_counts_noid)
+
+```
+
+## Analyzing text statistics
+
+```{r}
+tf_idf <- mmALL_073120_csv %>%
+  unnest_tokens(word, notes) %>%
+  anti_join(stop_words) %>%
+  mutate(stem = wordStem(word)) %>%
+  count(id, stem, region, country) %>%
+  arrange(desc(n))%>%
+  bind_tf_idf(stem, id, n)
+View(tf_idf)
+
+top_tfidf <- tf_idf  %>%
+  arrange(desc(tf_idf))  %>%
+  drop_na()
+top_tfidf
+
+par(mfrow = c(1, 1))
+
+top_tfidf %>%
+    mutate(word = reorder_within(stem, tf_idf, country)) %>%
+  filter(region=="Europe" |country =="Russia" ) %>%
+    ggplot(aes(stem, tf_idf, fill = country)) +
+    geom_col(alpha = 0.8, show.legend = FALSE) +
+#    facet_wrap(~ country, scales = "free", ncol = 3) +
+#    facet_wrap(~ country, scales = "free", ncol = 3) +
+#    facet_grid_paginate(~ country, scales = "free", ncol = 3)+
+    scale_x_reordered() +
+    coord_flip() +
+    theme(strip.text=element_text(size=5)) +
+    labs(x = NULL, y = "tf-idf",
+         title = "Highest tf-idf words in 2020 Mass Mobilization Data")
+
+
+
+
+```
+
+## Topic Modeling Algorithms
+
+Text2vec Package - handle large text datasets with high efficiency 
+Topicmodels Package - LDA, CTM, model evaluation, viz 
+MALLET Package - LDA, Hierarchical LDA 
+TM Package LSAfun Package - Latent Semantic Analysis (LSA) 
+tsne Package - dimensionality reduction and data visualization
+
+Latent Dirichlet Allocation (LDA)
+
+```{r}
+# LDA outputs: the topic word distributions and the document-topic memberships (from which topics does a document come from)
+
+mmDTM <- DocumentTermMatrix(stem_counts)
+mmDTM
+
+mm_lda <- LDA(mmDTM, k = 10, control = list(seed = 31415))
+mm_lda
+topicdata <- as.data.frame(terms(mm_lda, 10))
+View(topicdata) 
+
+## A LDA_VEM topic model with 4 topics.
+topics <- tidy(mm_lda, matrix = "beta")
+#topics
+memberships <- tidy(mm_lda, matrix = "gamma")
+#memberships
+
+top_terms <- 
+  topics %>%
+  group_by(topic) %>%
+  top_n(10, beta) %>%
+  ungroup() %>%
+  arrange(topic, -beta)
+top_terms
+
+```
+
+## Lexicon Approach to Sentiment Analysis
+
+Sentiment Analysis package cleanNLP Package
+
+```{r echo=TRUE}
+?get_sentiments()
+
+View(get_sentiments(lexicon = "nrc"))
+
+mm_Sent <- mmALL_073120_csv %>%
+  unnest_tokens(word, notes) %>%
+  anti_join(stop_words) %>%
+  mutate(stem = wordStem(word)) %>%
+  inner_join(get_sentiments("nrc"))
+View(mm_Sent)
+
+
+```
+
+## Visualizing Text Data: Networks, Word Clouds, Bar Charts
+
+Wordcloud Package
+
+<https://quanteda.io/articles/pkgdown/examples/plotting.html>
+
+```{r}
+library(dplyr)
+
+mm_Sent
+
+top_terms %>%
+  mutate(term = reorder(term, beta)) %>%
+  ggplot(aes(term, beta, fill = factor(topic))) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~ topic, scales = "free") +
+  coord_flip()
+
+?wordcloud
+wordcloud(mm_Sent$sentiment,colors="purple")
+
+```
