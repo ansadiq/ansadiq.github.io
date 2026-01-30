@@ -6,18 +6,6 @@
     - Minor: African & African American Studies
     - Undergraduate Thesis: Effects of Solitary Housing on Mouse Pituitary Glucocorticoid Receptor Expression
 
-### Skills
-
-| Area     | Skills/Tools |
-|:---------|:-------------|
-| **Quantitative Analysis** | Text and Numeric Data Preprocessing, Statistical Analysis, Model Building and Evaluation, Data Visualization, Classification Algorithms, Clustering Algorithms, Geospatial Visualization (using R, GeoDa, QGIS 2, and ArcGIS), Topic Modeling, Sentiment Analysis |
-| **Programming Languages** | R (Advanced), Python (Novice)|
-| **Qualitative Analysis** | Semi-structured Interviews, Delphi Methodology, Open-ended question development and analysis, Scoping and systematic literature reviews |
-| **Qualitative Software** | R, Atlas.ti, Covidence, Linguistic Inquiry and Word Count (LIWC-22) |
-| **'Dry' Lab Data Collection** | Qualtrics, Google Forms, Survey Monkey, Functional Magnetic Resonance Imaging |
-| **Wet Lab Data Collection** | Bradford Assay, Western Blot, Polymerase chain reaction, Recombinase Polymerase Amplification, Ponceau stains, SDS-PAGE, mRNA Extraction and Isolation from brain tissue, DNA Extraction and Isolation from bacteria, Gel Electrophoresis |
-
-
 #### Research Interests
 
 mixed-methods, computational social science methods, social determinants of health, social support, early-life adversity, intergenerational effects, allostasis & homeostasis via prefrontal cortex-hypothalamic-pituitary-adrenal functioning, structural interventions
@@ -26,9 +14,6 @@ mixed-methods, computational social science methods, social determinants of heal
 
 My research examines how macro-level environmental factors—from neighborhood characteristics to social movements to policy environments—influence micro-level developmental processes including stress physiology, cognitive function, and psychological well-being. I apply an interdisciplinary approach to studying social environment and well-being, using mixed methods to examine how factors like resource scarcity and environmental barriers measurably shape health outcomes and divergent life trajectories. This includes spatial analysis of environmental exposures, computational text analysis of expert narratives, longitudinal modeling of biomarker data, and mixed-methods approaches. This methodological diversity allows me to examine social context effects across multiple levels of analysis—from "neurons to neighborhoods". My work is theoretically grounded in ecological systems theory, scarcity theory, skin-deep resilience, social identity theory, John Henryism, and social baseline theory, allostatic load theory, and community-based participatory research approaches to examine questions that matter for scientific understanding, social policy, and marginalized communities. 
 
-### Dissertation Committee
-
-William Hobbs, Misha Inniss-Thompson, Jane Mendle
 
 ### Current Projects
 
